@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://c1oasjnyhotkc"]
+
+[ext_resource type="Resource" uid="uid://cymgge3r01up8" path="res://addons/gdquest_practice_framework/practice_solutions/01.bullet/metadata.tres" id="1_sdtmj"]
+[ext_resource type="Resource" uid="uid://bbrl4muxktn23" path="res://addons/gdquest_practice_framework/practice_solutions/02.character_input/metadata.tres" id="2_642er"]
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata_list.gd" id="2_ns5cq"]
+[ext_resource type="Resource" uid="uid://cooiix4lj87ls" path="res://addons/gdquest_practice_framework/practice_solutions/03.character_diagionals/metadata.tres" id="3_d31k3"]
+[ext_resource type="Resource" uid="uid://dxn3prlomubgm" path="res://addons/gdquest_practice_framework/practice_solutions/04.boosting_circle/metadata.tres" id="4_bnsib"]
+[ext_resource type="Resource" uid="uid://bg26ac3n10qpn" path="res://addons/gdquest_practice_framework/practice_solutions/05.steering/metadata.tres" id="5_7xiru"]
+
+[resource]
+script = ExtResource("2_ns5cq")
+metadatas = Array[Resource]([ExtResource("1_sdtmj"), ExtResource("2_642er"), ExtResource("3_d31k3"), ExtResource("4_bnsib"), ExtResource("5_7xiru")])

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cooiix4lj87ls"]
+
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata.gd" id="1_gaqsd"]
+
+[resource]
+script = ExtResource("1_gaqsd")
+title = &"Speeding in diagonals"
+id = &"04_to_space_and_beyond_030_character_diagionals"
+lesson_number = 3
+practice_number = 2
+scene_file_paths = Array[String](["res://addons/gdquest_practice_framework/practice_solutions/03.character_diagionals/character_diagionals.tscn"])

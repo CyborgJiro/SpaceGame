@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cymgge3r01up8"]
+
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata.gd" id="1_bdy04"]
+
+[resource]
+script = ExtResource("1_bdy04")
+title = &"The bullet"
+id = &"04_to_space_and_beyond_010_the_bullet"
+lesson_number = 2
+practice_number = 1
+scene_file_paths = Array[String](["res://addons/gdquest_practice_framework/practice_solutions/01.bullet/bullet.tscn"])

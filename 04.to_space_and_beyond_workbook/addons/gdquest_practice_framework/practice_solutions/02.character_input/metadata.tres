@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bbrl4muxktn23"]
+
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata.gd" id="1_uqtxp"]
+
+[resource]
+script = ExtResource("1_uqtxp")
+title = &"My character is not moving!"
+id = &"04_to_space_and_beyond_020_character_input"
+lesson_number = 3
+practice_number = 1
+scene_file_paths = Array[String](["res://addons/gdquest_practice_framework/practice_solutions/02.character_input/character_input.tscn"])

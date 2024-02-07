@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnnxfl3thl8qk"]
+
+[ext_resource type="Theme" uid="uid://bk3rqtt0xeorm" path="res://addons/gdquest_practice_framework/ui/assets/theme.tres" id="1_5xw4w"]
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/tester/tester.gd" id="1_awhsl"]
+[ext_resource type="PackedScene" uid="uid://c553h2n1lu6uh" path="res://addons/gdquest_practice_framework/tester/ghost_layout.tscn" id="2_b1jiv"]
+[ext_resource type="PackedScene" uid="uid://5l36tosihkeq" path="res://addons/gdquest_practice_framework/tester/split_layout.tscn" id="2_pe8j0"]
+[ext_resource type="Texture2D" uid="uid://ct8uumbpfehb2" path="res://addons/gdquest_practice_framework/tester/icons/video-game-controller-on.svg" id="4_wn2a1"]
+[ext_resource type="Texture2D" uid="uid://cdge3jy3oa3h0" path="res://addons/gdquest_practice_framework/tester/icons/video-game-controller-off.svg" id="5_4xekx"]
+
+[sub_resource type="Animation" id="Animation_wsfw4"]
+resource_name = "input-off"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4xekx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.156863)]
+}
+
+[sub_resource type="Animation" id="Animation_58pg2"]
+resource_name = "input-on"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wn2a1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27soi"]
+_data = {
+"input-off": SubResource("Animation_wsfw4"),
+"input-on": SubResource("Animation_58pg2")
+}
+
+[node name="Tester" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5xw4w")
+script = ExtResource("1_awhsl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogPanelContainer" type="PanelContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(368, 0)
+layout_mode = 2
+theme_type_variation = &"PanelContainerPractices"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LogPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LogPanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleRichTextLabel" type="RichTextLabel" parent="HBoxContainer/LogPanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/LogPanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LogPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/LogPanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ChecksVBoxContainer" type="VBoxContainer" parent="HBoxContainer/LogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GhostLayout" parent="HBoxContainer" instance=ExtResource("2_b1jiv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SplitLayout" parent="HBoxContainer" instance=ExtResource("2_pe8j0")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ControlsPanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlsPanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="InputTextureRect" type="TextureRect" parent="ControlsPanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_wn2a1")
+
+[node name="InputAnimationPlayer" type="AnimationPlayer" parent="ControlsPanelContainer/MarginContainer/HBoxContainer/InputTextureRect"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_27soi")
+}
+autoplay = "input-off"
+
+[node name="ToggleX5Button" type="Button" parent="ControlsPanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "x5"
+
+[node name="ToggleLayoutButton" type="Button" parent="ControlsPanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Ghost / Split"

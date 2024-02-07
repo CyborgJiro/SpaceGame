@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dxn3prlomubgm"]
+
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata.gd" id="1_gf1er"]
+
+[resource]
+script = ExtResource("1_gf1er")
+title = &"Make the circle boost!"
+id = &"04_to_space_and_beyond_040_boosting_circle"
+lesson_number = 4
+practice_number = 1
+scene_file_paths = Array[String](["res://addons/gdquest_practice_framework/practice_solutions/04.boosting_circle/boosting_circle.tscn"])

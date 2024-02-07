@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bg26ac3n10qpn"]
+
+[ext_resource type="Script" path="res://addons/gdquest_practice_framework/metadata/metadata.gd" id="1_dv541"]
+
+[resource]
+script = ExtResource("1_dv541")
+title = &"Steering the circle"
+id = &"04_to_space_and_beyond_050_steering_copy"
+lesson_number = 5
+practice_number = 1
+scene_file_paths = Array[String](["res://addons/gdquest_practice_framework/practice_solutions/05.steering/steering.tscn"])
